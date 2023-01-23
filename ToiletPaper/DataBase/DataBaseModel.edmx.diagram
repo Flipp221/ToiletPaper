@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f658da8edc2c4399968c964ed9ebc43b" Name="Diagram1">
+        <EntityTypeShape EntityType="ToiletPaperModel.Material" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.MaterialProd" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.MaterialsAndProducts" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.Number_User" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.Product" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.Roll" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.TypeProd" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToiletPaperModel.User" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="ToiletPaperModel.FK_Material_MaterialProd" ManuallyRouted="false" />
+        <AssociationConnector Association="ToiletPaperModel.FK_MaterialsAndProducts_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ToiletPaperModel.FK_Product_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ToiletPaperModel.FK_MaterialsAndProducts_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ToiletPaperModel.FK_Number_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ToiletPaperModel.FK_Product_TypeProd" ManuallyRouted="false" />
+        <AssociationConnector Association="ToiletPaperModel.FK_User_Roll" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
