@@ -20,7 +20,10 @@ namespace ToiletPaper
     /// </summary>
     public partial class MenuWindow : Window
     {
+       
+        
         public static ToiletPaperEntities db = new ToiletPaperEntities();
+        
         public List<Product> products = new List<Product>();
         public MenuWindow()
         {
@@ -71,10 +74,9 @@ namespace ToiletPaper
 
         private void RefreshComboBox()
         {
-            CBNumberWrite.Items.Add("10");
-            SortCB.Items.Add("По умолчанию");
+            CBNumberWrite.Items.Add("20");
             SortCB.Items.Add("По названию");
-            SortCB.Items.Add("По типу подсветки");
+            SortCB.Items.Add("По типу продукта");
         }
         private void RefreshFilter()
         {
@@ -109,52 +111,25 @@ namespace ToiletPaper
         }
         private void Red_Click(object sender, RoutedEventArgs e)
         {
-            //AddKeyboardPage page = new AddKeyboardPage((sender as Button).DataContext as Model.keyboard);
-            //page.Show();
-            //this.Close();
+            AddProduct page = new AddProduct((sender as Button).DataContext as Product);
+            page.Show();
+            this.Close();
         }
 
         private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //KeyboardList.ItemsSource = null;
-            //if (SortCB.SelectedIndex == 0)
-            //{
-            //    KeyboardList.ItemsSource = users.Skip(pageNumber * pageSize).Take(pageSize).ToList();
-            //}
-            //else if (SortCB.SelectedIndex == 1)
-            //{
-            //    var a = users.Skip(pageNumber * pageSize).Take(pageSize).ToList();
-            //    for (int? j = 0; j < a.Count; j++)
-            //    {
-            //        for (int i = 0; i < a.Count - 1; i++)
-            //        {
-            //            if (a[i].CompareTo(a[i + 1]) > 0)
-            //            {
-            //                var temp = a[i];
-            //                a[i] = a[i + 1];
-            //                a[i + 1] = temp;
-            //            }
-            //        }
-            //    }
-            //    KeyboardList.ItemsSource = a;
-            //}
-            //else if (SortCB.SelectedIndex == 2)
-            //{
-            //    var a = users.Skip(pageNumber * pageSize).Take(pageSize).ToList();
-            //    for (int? j = 0; j < a.Count; j++)
-            //    {
-            //        for (int i = 0; i < a.Count - 1; i++)
-            //        {
-            //            if (a[i].CompareTo(a[i + 1], 3) > 0)
-            //            {
-            //                var temp = a[i];
-            //                a[i] = a[i + 1];
-            //                a[i + 1] = temp;
-            //            }
-            //        }
-            //    }
-            //    KeyboardList.ItemsSource = a;
-            //}
+            if (SortCB.SelectedItem == "По названию")
+            {
+                KeyboardList.ItemsSource = null;
+                KeyboardList.ItemsSource = Connetction.con.Product.Where(z => z.Name == z.Name).ToList();
+            }
+            if (SortCB.SelectedIndex == 1)
+            {
+                KeyboardList.ItemsSource = null;
+                KeyboardList.ItemsSource = Connetction.con.Product.Where(z => z.TypeProd == z.TypeProd).ToList();
+               
+            }
+
         }
 
         private void FilterCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -194,9 +169,9 @@ namespace ToiletPaper
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            //AddKeyboardPage addKeyboardPage = new AddKeyboardPage(null);
-            //addKeyboardPage.Show();
-            //this.Close();
+            AddProduct addProduct = new AddProduct(null);
+            addProduct.Show();
+            this.Close();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

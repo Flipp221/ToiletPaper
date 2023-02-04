@@ -51,5 +51,12 @@ namespace ToiletPaper
                 }
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            this.Close();
+            menuWindow.ShowDialog();
+        }
     }
 }

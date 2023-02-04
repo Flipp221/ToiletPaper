@@ -26,5 +26,6 @@
         <TextBlock Text="Логин:" VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis" Grid.Column="1" Margin="145,10,0,0" Grid.Row="2" Height="24" Width="53" />
         <TextBlock Text="Пароль:" VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis" Grid.Column="1" Margin="144,39,0,0" Grid.Row="2" Height="24" Width="54" />
         <Button x:Name="btnAuth" Content="Авторизироваться" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnAuth_Click" Grid.Column="2" Margin="11,10,8,0" Grid.Row="3" Width="140" Foreground="#FFFF00B9" Background="#FF00FF3A" BorderBrush="#FF00FFF3" Height="26"></Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="48,36,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click" Foreground="{x:Null}"/>
     </Grid>
 </Window>

@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ToiletPaperModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище ToiletPaperModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Material">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="id_Type" Type="int" Nullable="false" />
           <Property Name="CountPackaged" Type="int" />
@@ -22,7 +22,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameMaterials" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MaterialsAndProducts">
@@ -30,7 +30,7 @@
             <PropertyRef Name="Id_Prod" />
             <PropertyRef Name="Id_Material" />
           </Key>
-          <Property Name="Id_Prod" Type="int" Nullable="false" />
+          <Property Name="Id_Prod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Material" Type="int" Nullable="false" />
           <Property Name="RequiredAmountMaterials" Type="int" />
         </EntityType>
@@ -47,7 +47,7 @@
           <Key>
             <PropertyRef Name="Id_Prod" />
           </Key>
-          <Property Name="Id_Prod" Type="int" Nullable="false" />
+          <Property Name="Id_Prod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="MinCostForAgent" Type="int" />
           <Property Name="Picture" Type="image" />
@@ -76,7 +76,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameType" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="User">
@@ -244,8 +244,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ToiletPaperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
